@@ -112,9 +112,10 @@ usersController.loginUser = async (req, res) => {
             result.password = undefined;
     
             const token = jsonwebtoken.sign({
-               data: result,
-               role: 'User'
-            }, 'supersecretToken', { expiresIn: '7d' });
+              data: result,
+              role: 'User'
+           }, process.env.JWT_KEY, { expiresIn: '7d' });
+           
             
             res.send({ message: 'Successfully Logged in', token: token });
           } 
