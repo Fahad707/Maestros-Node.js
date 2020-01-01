@@ -11,9 +11,11 @@ const Book = new Schema({
         unique: true,
         sparse:true
     },
+
      author: {
         type: String
     },
+
     image_url: {
         type: String
     },
