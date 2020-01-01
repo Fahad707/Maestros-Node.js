@@ -56,7 +56,8 @@ usersController.registerUser = async (req, res) => {
 
     const password = body.password;
 
-   
+    var salt = bcrypt.genSaltSync(10);
+    var hash = bcrypt.hashSync(password, salt);
 
     body.password = hash;
     const user = new Users(body);
