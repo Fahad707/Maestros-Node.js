@@ -167,14 +167,7 @@ usersController.deleteUser = async (req, res) => {
     const result = await Users.findOneAndDelete({
       _id: _id
     });
-    //   const result = await Inventory.updateOne({
-    //         _id: _id
-    //     }, {
-    //         $set: {is_deleted: 1}
-    //     }, {
-    //         upsert: true,
-    //         runValidators: true
-    //     });
+  
     res.status(200).send({
       code: 200,
       message: 'Deleted Successfully'
