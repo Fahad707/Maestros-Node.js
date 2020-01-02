@@ -6,7 +6,7 @@ booksController.getAll = async (req, res) => {
   try {
     let merged = {};
     const start = 0;
-    const length = 100;
+    const length = 110;
     books = await Books.paginate(
       merged,
       {
